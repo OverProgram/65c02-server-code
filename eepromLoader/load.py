@@ -16,14 +16,11 @@ def chunks(lst, size):
 
 def load(raw_data, eeprom):
     current_address = 0
-    eeprom.disable_sdp()
     for byte in raw_data:
         eeprom.write_byte(current_address, byte)
         while eeprom.is_writing():
             pass
         current_address += 1
-
-    eeprom.enable_sdp()
 
 
 if __name__ == '__main__':

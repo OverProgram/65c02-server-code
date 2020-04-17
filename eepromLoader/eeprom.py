@@ -20,53 +20,52 @@ class EEPROM(gpio.CompositeOutputDevice):
                          ce=gpio.DigitalOutputDevice(ce_port), we=gpio.DigitalOutputDevice(we_port),
                          oe=gpio.DigitalOutputDevice(oe_port))
         self.sdp_enabled = False
+        self.ce.off()
+        self.we.on()
+        self.oe.on()
+        self.address.off()
+        self.data.off()
 
     def read(self, address):
         bit_address = self.to_bit_data(address, 13)
-        self.we.on()
         self.address.value = bit_address
         self.oe.off()
-        self.ce.off()
         data = self.data.value
-        self.ce.on()
         self.oe.on()
-        byte_data = 0
-        for bit in data:
-            if bit == 1:
-                byte_data += 1
-            byte_data = byte_data << 1
-        byte_data = byte_data >> 1
-        byte_data = byte_data | (data[len(data)-1] << (len(data)-1))
-        return bytes([byte_data])
+        return self.from_bit_data(data)
 
-    def to_bit_data(self, data, length):
+    @staticmethod
+    def from_bit_data(data):
+        byte = 0
+        for i, b in enumerate(data):
+            byte += (1 << i) * b
+        return byte
+
+    @staticmethod
+    def to_bit_data(data, length):
         bit_data = []
         for i in range(length):
-            bit_data.append(b'\x01' if data & (1 << i) == 1 else b'\0')
+            bit_data.append(1 if data & (1 << i) != 0 else 0)
 
         return tuple(bit_data)
 
     def write_byte(self, address, data, standalone=True):
-        self.ce.on()
-        self.oe.on()
         bit_data = self.to_bit_data(data, 8)
         bit_address = self.to_bit_data(address, 13)
-        self.ce.off()
+        print(bit_address)
         self.address.value = bit_address
+        sleep(0.01)
         self.we.off()
-        sleep(50e-9)
         self.data.value = bit_data
-        sleep(150e-9)
+        sleep(0.01)
         self.we.on()
-        if standalone:
-            self.ce.on()
+        sleep(0.01)
 
     def enable_sdp(self):
-        if not self.sdp_enabled:
-            self.write_byte(0x1555, 0xAA)
-            self.write_byte(0x0AAA, 0x55)
-            self.write_byte(0x1555, 0xA0)
-            self.sdp_enabled = True
+        self.write_byte(0x1555, 0xAA)
+        self.write_byte(0x0AAA, 0x55)
+        self.write_byte(0x1555, 0xA0)
+        self.sdp_enabled = True
 
     def disable_sdp(self):
         if self.sdp_enabled:
@@ -99,5 +98,4 @@ class EEPROM(gpio.CompositeOutputDevice):
     def is_writing(self):
         read_one = self.read(0)
         read_two = self.read(0)
-        return ((int.from_bytes(read_one, byteorder='big') & 0b1000000) >> 6) !=\
-               ((int.from_bytes(read_two, byteorder='big') & 0b1000000) >> 6)
+        return ((read_one & 0b1000000) >> 6) != ((read_two & 0b1000000) >> 6)
