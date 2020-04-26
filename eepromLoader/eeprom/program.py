@@ -22,14 +22,17 @@ with open("config.json") as f:
 				print('Writing byte number {}/{}'.format(i+1, len(raw_data)), end='\r')
 				if byte != current_data[i]:
 					eeprom.write(byte, i)
+					time.sleep(0.1)
 			print()
 			print('Verifiying write...')
-			for i, byte in enumerate(raw_data):
-				print('Verifying byte number {}/{}'.format(i+1, len(raw_data)), end='\r')
-				verify_byte = eeprom.read(i)
-				if verify_byte != byte:
-					print('There was a problem at byte {}: expected {} but got {}'.format(i, byte, verify_byte))
-					break
+			with open('a.in', 'wb') as out:
+				for i, byte in enumerate(raw_data):
+					print('Verifying byte number {}/{}'.format(i+1, len(raw_data)), end='\r')
+					verify_byte = eeprom.read(i)
+					if verify_byte != byte:
+						print('There was a problem at byte {}: expected {} but got {}'.format(i, byte, verify_byte))
+						break
+					out.write(bytes([verify_byte]))
 	finally:
 		GPIO.cleanup()
 		print()
