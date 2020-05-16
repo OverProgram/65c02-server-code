@@ -16,13 +16,13 @@ end BitCounter;
 architecture counterBehav of BitCounter is
 
     component Incrementer
-    generic(
-        size : integer := 8
-    );
-    port (
-        A : in std_logic_vector(size-1 downto 0);   -- In port
-        S : out std_logic_vector(size-1 downto 0)   -- Out port
-    );
+        generic(
+            size : integer := 8
+        );
+        port (
+            A : in std_logic_vector(size-1 downto 0);
+            S : out std_logic_vector(size-1 downto 0)
+        );
     end component;
 
     signal counter : std_logic_vector(size-1 downto 0);
