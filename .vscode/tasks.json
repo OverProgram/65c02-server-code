@@ -1,0 +1,16 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Buid",
+            "type": "shell",
+            "command": "~/vasm6502_oldstyle/linux/vasm6502_oldstyle -Fbin -dotdir ${file}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8fef4bfc-27a6-46b0-9ca3-da0d44c25acd" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1b2v8xjE8Z90TJKE2EN1et8BVhH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8fef4bfc-27a6-46b0-9ca3-da0d44c25acd" name="Default Changelist" comment="" />
+      <created>1587842847785</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587842847785</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Finally works!!!">
+      <created>1587891008613</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587891008613</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Finally works!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finally works!!!" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="726" y="322" width="457" height="391" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587890958916">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="726" y="322" width="457" height="391" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587890958916" />
+    <state x="581" y="79" width="747" height="877" key="CommitChangelistDialog2" timestamp="1587891008085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="581" y="79" width="747" height="877" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587891008085" />
+    <state x="737" y="262" width="424" height="510" key="FileChooserDialogImpl" timestamp="1587842869957">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="737" y="262" width="424" height="510" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587842869957" />
+    <state x="555" y="255" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1587891022156">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="555" y="255" width="800" height="526" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587891022156" />
+  </component>
+</project>
