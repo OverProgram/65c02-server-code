@@ -32,3 +32,6 @@ file . "src/BitAdder.vhdl" "d41d72ee79fbe7a66084e4778837ef7750f3321c" "202005230
 file . "test/vgaTest.vhdl" "592da986557e48c86e9f5770e139d9a017ba0b2c" "20200523093245.321":
   entity vgatest at 1( 0) + 0 on 75;
   architecture vgatestbehav of vgatest at 8( 102) + 0 on 76;
+file . "test/compareTest.vhdl" "09dc0edd266cdb9776ced17d2dc55cde8a4f04a3" "20200523095318.423":
+  entity cmptest at 1( 0) + 0 on 99;
+  architecture cmptestbehav of cmptest at 8( 102) + 0 on 100;
