@@ -1,0 +1,3 @@
+NET "clk" LOC=N8 | S;
+NET "hsync" LOC=P5;
+NET "vsync" LOC=N5;

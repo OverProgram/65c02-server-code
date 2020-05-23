@@ -56,17 +56,23 @@ architecture vgaControllerBehav of VGAController is
     signal vsyncR : std_logic;
     signal vclk : std_logic;
 
+    signal rst_col : std_logic;
+    signal rst_row : std_logic;
+
 begin
+
+    rst_col <= rst or vclk;
+    rst_row <= rst or vpixle_rst;
 
     COL_COUNTER: BitCounter generic map (10) port map (
         pixle,
-        (rst or vclk),
+        rst_col,
         clk
     );
 
     ROW_COUNTER: BitCounter generic map (10) port map (
         vpixle,
-        (rst or vpixle_rst),
+        rst_row,
         vclk
     );
 
