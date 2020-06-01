@@ -1,37 +1,40 @@
 v 4
-file . "src/vga.vhdl" "c0a60f3beea85f23c2bd29ed4b4d20486ec7609a" "20200523093536.738":
-  entity vgacontroller at 1( 0) + 0 on 91;
-  architecture vgacontrollerbehav of vgacontroller at 14( 306) + 0 on 92;
-file . "src/latch.vhdl" "bee2384f20025766035b178b0b6fa666622b78c0" "20200523093536.736":
-  entity latch at 1( 0) + 0 on 87;
-  architecture latchbehav of latch at 14( 255) + 0 on 88;
-file . "src/comparator.vhdl" "ff792e80d5dd335dc5d8b8b7a297c2dbf8b8c4f7" "20200523093536.733":
-  entity comparator at 1( 0) + 0 on 81;
-  architecture comparebehav of comparator at 16( 348) + 0 on 82;
-file . "test/regTest.vhdl" "4b61c4b72b55588185cb6f9ebe0e18fa805499eb" "20200512093226.855":
-  entity regtest at 1( 0) + 0 on 73;
-  architecture regtestbehav of regtest at 8( 102) + 0 on 74;
-file . "test/counterTest.vhdl" "6624814383f77b3a80f0e432bb77698b86e3c0a8" "20200512091930.730":
-  entity inctest at 1( 0) + 0 on 67;
-  architecture inctestbehav of inctest at 8( 102) + 0 on 68;
-file . "src/register.vhdl" "7cb2a5dd5ad11dc826938e84cc5accd5b5eef609" "20200523093536.737":
-  entity reg at 1( 0) + 0 on 89;
-  architecture regbehav of reg at 20( 595) + 0 on 90;
-file . "src/counter.vhdl" "88017f57b220eec25afe50925d6c1c0e93efb333" "20200523093536.734":
-  entity bitcounter at 1( 0) + 0 on 83;
-  architecture counterbehav of bitcounter at 16( 263) + 0 on 84;
-file . "src/Adder.vhdl" "d3768b215bcc0412d660dae17b512f1b1a79529f" "20200523093536.732":
-  entity adder at 1( 0) + 0 on 77;
-  architecture adderbehav of adder at 16( 288) + 0 on 78;
-file . "src/incrementer.vhdl" "7f79211f80d95c57f3b0bddb22fcaa12cc5c3fe3" "20200523093536.735":
-  entity incrementer at 1( 0) + 0 on 85;
-  architecture incrementerbehav of incrementer at 14( 277) + 0 on 86;
+file . "test/latchTest.vhdl" "99e7463d578679235b3f9747343fb8182d1f8ca6" "20200525105735.117":
+  entity latchtest at 1( 0) + 0 on 183;
+  architecture latchtestbehav of latchtest at 8( 106) + 0 on 184;
+file . "test/compareTest.vhdl" "865ab596072db5e52d532aaac2a8a43fac462291" "20200527080346.419":
+  entity cmptest at 1( 0) + 0 on 295;
+  architecture cmptestbehav of cmptest at 8( 102) + 0 on 296;
+file . "test/vgaTest.vhdl" "f4324f7b54c3d2f392ceb944c3143c4a8c8d6681" "20200527084648.786":
+  entity vgatest at 1( 0) + 0 on 341;
+  architecture vgatestbehav of vgatest at 8( 102) + 0 on 342;
 file . "src/BitAdder.vhdl" "d41d72ee79fbe7a66084e4778837ef7750f3321c" "20200523093536.733":
   entity bitadder at 1( 0) + 0 on 79;
   architecture bitadderbehav of bitadder at 16( 234) + 0 on 80;
-file . "test/vgaTest.vhdl" "592da986557e48c86e9f5770e139d9a017ba0b2c" "20200523093245.321":
-  entity vgatest at 1( 0) + 0 on 75;
-  architecture vgatestbehav of vgatest at 8( 102) + 0 on 76;
-file . "test/compareTest.vhdl" "09dc0edd266cdb9776ced17d2dc55cde8a4f04a3" "20200523095318.423":
-  entity cmptest at 1( 0) + 0 on 99;
-  architecture cmptestbehav of cmptest at 8( 102) + 0 on 100;
+file . "src/incrementer.vhdl" "7f79211f80d95c57f3b0bddb22fcaa12cc5c3fe3" "20200523093536.735":
+  entity incrementer at 1( 0) + 0 on 85;
+  architecture incrementerbehav of incrementer at 14( 277) + 0 on 86;
+file . "src/Adder.vhdl" "d3768b215bcc0412d660dae17b512f1b1a79529f" "20200523093536.732":
+  entity adder at 1( 0) + 0 on 77;
+  architecture adderbehav of adder at 16( 288) + 0 on 78;
+file . "src/counter.vhdl" "88017f57b220eec25afe50925d6c1c0e93efb333" "20200523093536.734":
+  entity bitcounter at 1( 0) + 0 on 83;
+  architecture counterbehav of bitcounter at 16( 263) + 0 on 84;
+file . "src/register.vhdl" "7cb2a5dd5ad11dc826938e84cc5accd5b5eef609" "20200523093536.737":
+  entity reg at 1( 0) + 0 on 89;
+  architecture regbehav of reg at 20( 595) + 0 on 90;
+file . "test/counterTest.vhdl" "6624814383f77b3a80f0e432bb77698b86e3c0a8" "20200512091930.730":
+  entity inctest at 1( 0) + 0 on 67;
+  architecture inctestbehav of inctest at 8( 102) + 0 on 68;
+file . "test/regTest.vhdl" "4b61c4b72b55588185cb6f9ebe0e18fa805499eb" "20200512093226.855":
+  entity regtest at 1( 0) + 0 on 73;
+  architecture regtestbehav of regtest at 8( 102) + 0 on 74;
+file . "src/comparator.vhdl" "9d046d92f0ff311180e98cedaffabe69cb6666a8" "20200523095447.810":
+  entity comparator at 1( 0) + 0 on 101;
+  architecture comparebehav of comparator at 16( 348) + 0 on 102;
+file . "src/latch.vhdl" "5e2ceacf1b1fd6b89f9a88745e6345eb532afddb" "20200523102049.300":
+  entity latch at 1( 0) + 0 on 139;
+  architecture latchbehav of latch at 14( 255) + 0 on 140;
+file . "src/vga.vhdl" "0a34a60461540899a2e9e081277c62dc57a454d5" "20200527084035.900":
+  entity vgacontroller at 1( 0) + 0 on 337;
+  architecture vgacontrollerbehav of vgacontroller at 19( 474) + 0 on 338;

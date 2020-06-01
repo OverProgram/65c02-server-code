@@ -19,12 +19,12 @@ architecture cmpTestBehav of CmpTest is
         );
     end component;
 
-    signal A : std_logic_vector(7 downto 0);
-    signal B : std_logic_vector(7 downto 0);
+    signal A : std_logic_vector(9 downto 0);
+    signal B : std_logic_vector(9 downto 0);
     signal eq : std_logic;
 
 begin
-    TEST_CMP: Comparator generic map (8) port map (
+    TEST_CMP: Comparator generic map (10) port map (
         A,
         B,
         eq
@@ -32,10 +32,10 @@ begin
 
     process
     begin
-        for i in 255 downto 0 loop
-            A <= std_logic_vector(to_unsigned(i, 8));
-            for j in 255 downto 0 loop
-                B <= std_logic_vector(to_unsigned(j, 8));
+        for i in 1023 downto 0 loop
+            A <= std_logic_vector(to_unsigned(i, 10));
+            for j in 1023 downto 0 loop
+                B <= std_logic_vector(to_unsigned(j, 10));
                 wait for 5 ns;
                 if (i = j) then
                     assert (eq = '1') report "Error: A = " & integer'image(i) & " B = " & integer'image(j) severity failure;

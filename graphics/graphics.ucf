@@ -1,3 +1,5 @@
-NET "clk" LOC=N8 | S;
-NET "hsync" LOC=P5;
-NET "vsync" LOC=N5;
+NET "clk" LOC=P7 | S;
+NET "rst" LOC=N6 | S;
+#NET "dbg" LOC=P12;
+NET "hsync" LOC=P5 | SLEW="FAST";
+NET "vsync" LOC=N5 | SLEW="FAST";

@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
 
 entity BitCounter is
     generic(
@@ -30,18 +31,16 @@ architecture counterBehav of BitCounter is
 
 begin
 
-    COUNTER_INC: Incrementer generic map (size) port map (counter, counterPlus);
+--    COUNTER_INC: Incrementer generic map (size) port map (counter, counterPlus);
 
     C <= counter;
 
-    process(clk)
+    process(clk, rst)
     begin
-        if clk = '1' then
-            if rst = '0' then 
-                counter <= (size-1 downto 0 => '0');
-            else
-                counter <= counterPlus;
-            end if;
+        if rst = '0' then 
+            counter <= (size-1 downto 0 => '0');
+        elsif rising_edge(clk) then
+            counter <= counter + 1;
         end if;
     end process;
 

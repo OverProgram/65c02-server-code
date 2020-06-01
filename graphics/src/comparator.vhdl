@@ -24,7 +24,7 @@ begin
 
     CMP_GENERATE:
         for i in size-1 downto 0 generate
-            bit_eq(i) <= A(i) xnor A(i);
+            bit_eq(i) <= A(i) xnor B(i);
             track(i+1) <= track(i) and bit_eq(i);
         end generate;
 
